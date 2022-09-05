@@ -1,6 +1,8 @@
 # Dev Cleaner
 *Command line tool for finding and deleting development dependencies on your hard drive*
 
+![Tool Usage Example](./devcleaner.gif)
+
 ## What
 This is a small (1.2MB) command line tool which finds folders of local development dependencies (`node_modules`, etc), and provides
 a convenient terminal user interface to list and delete those folders.
@@ -22,4 +24,3 @@ Checkout the repository and run `cargo run YOUR/PATH/TO/SCAN` from the project f
 The tool will scan all folders in the given path and collect all occurences of 
 [`node_modules`, `target`, `build`, `dist`, `obj`, `venv`] and list them in your terminal.
 You can then select the folders you want to get rid of and hit `d` to delete them.
-![Tool Usage Example](./devcleaner.gif)
