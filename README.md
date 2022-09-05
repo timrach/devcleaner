@@ -22,4 +22,4 @@ Checkout the repository and run `cargo run YOUR/PATH/TO/SCAN` from the project f
 The tool will scan all folders in the given path and collect all occurences of 
 [`node_modules`, `target`, `build`, `dist`, `obj`, `venv`] and list them in your terminal.
 You can then select the folders you want to get rid of and hit `d` to delete them.
-
+![Tool Usage Example](./devcleaner.gif)
