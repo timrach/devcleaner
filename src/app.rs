@@ -27,17 +27,25 @@ impl App {
     }
 
     fn move_results_to_bin(&mut self) {
+        let mut removed: Vec<String> = vec![];
         for scan in self.scan_results.marked_items.iter() {
-            if let Some(path) = &self.scan_results.items.get(*scan) {
-                let path = Path::new(path);
+            if let Some(entry) = &self.scan_results.items.get(*scan) {
+                let path = Path::new(entry);
                 match move_to_bin(path) {
                     Ok(_) => {
-                        self.scan_results.items.remove(*scan);
+                        removed.push(entry.to_string());
                     }
                     Err(e) => println!("{}", e),
                 };
             }
         }
+
+        for entry in removed {
+            if let Some(idx) = self.scan_results.items.iter().position(|x| x == &entry) {
+                self.scan_results.items.remove(idx);
+            }
+        }
+
         self.scan_results.marked_items.clear();
     }
 
